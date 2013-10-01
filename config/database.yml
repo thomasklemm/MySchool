@@ -1,0 +1,13 @@
+development: &default
+  adapter: postgresql
+  database: my_school_development
+  encoding: utf8
+  min_messages: warning
+  pool: 20
+  timeout: 5000
+  host: localhost
+  username: thomasklemm
+
+test:
+  <<: *default
+  database: my_school_test
