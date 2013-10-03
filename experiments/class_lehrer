@@ -1,0 +1,41 @@
+class Lehrer < ...
+  vorname
+  nachname
+  anrede
+  geschlecht
+  kuerzel
+end
+
+magellan lehrer
+  vorname
+  nachname
+  anrede
+  geschlecht
+  geboren am
+  geburtsname
+  geburtsort
+  kürzel
+  personalnummer (extern)
+  strasse
+  postleitzahl
+  ort
+  land
+  gemeindeschluessel
+  telefon
+  mobil
+  telefax
+  diensttelefon
+  dienstfax
+  email
+  familienstand
+  kinder(zahl)
+  beruf
+  kfz 1 (kennzeichen)
+  kfz 2 (kennzeichen)
+  kategorie
+  staatsangehoerigkeit
+  konfession
+  status aktiv/inaktiv
+
+  hat lehraemter
+  hat fehlzeiten

@@ -1,0 +1,12 @@
+class Zeitraum < ...
+  belongs_to :schule
+  bezeichnung:text
+  starts_at:date
+  ends_at:date
+end
+
+ZEITRÄUME
+  - Es gibt einen aktuellen Zeitraum pro Schule
+  - Zeitraueme werden manuell festgelegt und gewechselt (der aktuelle Zeitraum
+    bestimmt sich aus der Schuleinstellung, nicht der Systemzeit).
+  - Nutzer soll nur im aktuellen Zeitraum Dinge anpassen können, alles historische bleibt fix.

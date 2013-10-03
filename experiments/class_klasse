@@ -1,0 +1,33 @@
+class Klasse < ...
+  belongs_to :schule
+  belongs_to :zeitraum # wichtig
+  kuerzel # 7d, index?
+  jahrgangstufe # 7
+
+  has_many :schueler
+end
+
+KLASSE
+  - Nutzer soll alle Schueler einer Jahrgangsstufe finden koennen.
+  - Nutzer soll alle Klassen einer Jahrgangsstufe in einem Zeitraum finden koennen.
+  ? Nutzer sollen ueben und lernen koennen in einer testschulumgebung, die der eigenen aehnelt
+
+
+magellan klasse
+  langname 1 # 'Klasse 8a'
+  langname 2
+  kuerzel # 8a
+  klassenleiter 1
+  klassenleiter 2
+  klassenraum
+  klassenstufe # 7
+  fachtafel # fachtafel jg. 7 => eingabe zeugnisdaten
+  unterrichtsform
+  jahrgang # 7
+  unterrichtstage # mo,di,mi,do,fr,sa,so
+  elternsprecher 1
+  elternsprecher 2
+  schuelersprecher 1
+  schuelersprecher 2
+  wahlvertreter 1
+  wahlvertreter 2
