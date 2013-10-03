@@ -29,5 +29,12 @@ MySchool::Application.configure do
 
   config.action_controller.action_on_unpermitted_parameters = :raise
 
-  config.action_mailer.default_url_options = { host: 'my_school.local' }
+  config.action_mailer.default_url_options = { host: 'my_school.dev' }
+  Rails.application.routes.default_url_options[:host] = 'my_school.dev'
+
+  # Insert live reload middleware
+  config.middleware.insert_after(ActionDispatch::Static, Rack::LiveReload)
+
+  # Open emails in the browser instead of sening them
+  config.action_mailer.delivery_method = :letter_opener
 end

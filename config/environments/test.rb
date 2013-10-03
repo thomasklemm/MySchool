@@ -35,4 +35,5 @@ MySchool::Application.configure do
   config.active_support.deprecation = :stderr
 
   config.action_mailer.default_url_options = { host: 'www.example.com' }
+  Rails.application.routes.default_url_options[:host] = 'www.example.com'
 end

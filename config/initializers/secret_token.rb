@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MySchool::Application.config.secret_key_base = '8dcb961b959c135bb0db6e306bd66068e4e5c02698f50af285c186752876df94852fd7551a3ba688dd25fae0b0c00b23c66a3315e6c7e8ab5d5ecbfca018bad1'
+MySchool::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
