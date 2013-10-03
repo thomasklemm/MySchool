@@ -194,6 +194,7 @@ de:
       long: ! '%A, %d. %B %Y, %H:%M Uhr'
       short: ! '%d. %B, %H:%M Uhr'
     pm: nachmittags
+
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
@@ -201,3 +202,18 @@ de:
   activerecord:
     errors:
       <<: *errors
+    models:
+      school: Schule
+    attributes:
+      school:
+        created_at: 'Erstellt am'
+        country: Land
+        email: Email
+        fax: Fax
+        name: Name
+        phone: Telefon
+        street: Straße
+        town: Stadt
+        updated_at: 'Geändert am'
+        web_page: Internetseite
+        zip_code: PLZ
