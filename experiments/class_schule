@@ -44,3 +44,38 @@ schulstatus
 hauptstelle
 schulleiter
 stellvertreter
+
+
+Schule
+  Name
+
+  Straße
+  PLZ
+  Ort
+  Land
+
+  Telefon
+  Telefax
+
+  Email
+  Webseite
+
+  Schulleiter
+  Stellvertreter
+
+School
+  name
+
+  street
+  zip_code
+  town
+  country
+
+  phone
+  fax
+
+  email
+  web_page
+
+  headmaster_id
+  deputy_headmaster_id
