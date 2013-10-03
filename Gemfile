@@ -7,7 +7,7 @@ gem 'sinatra', '>= 1.3.0', require: false
 
 # utilities
 gem 'oj'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'figaro'
 
 # debugging
 gem 'pry'
