@@ -15,7 +15,7 @@ gem 'pry-rails', group: :development
 
 # background jobs
 gem 'sidekiq'
-gem 'sidetiq'
+# gem 'sidetiq'
 gem 'rerun', group: :development
 
 # redis
