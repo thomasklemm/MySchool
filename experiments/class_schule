@@ -64,18 +64,5 @@ Schule
   Stellvertreter
 
 School
-  name
-
-  street
-  zip_code
-  town
-  country
-
-  phone
-  fax
-
-  email
-  web_page
-
   headmaster_id
   deputy_headmaster_id

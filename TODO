@@ -1,7 +1,6 @@
-- How does rails handle inflections for German words (schule, klasse, schueler, lehrer)
-
 - Welche Dinge aendern sich in einer Klasse zum Halbjahreswechsel?
   - Lehrer? Stundenplan? Schüler? Klassleiter?
     - A few things
 
 
+- Morgen: Schueler und Lehrer erstellen und Schule zuordnen. Schule in Console / Seed datei erstellen, dann Interface zum Eintragen von Schuelern und Lehrern basteln

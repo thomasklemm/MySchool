@@ -28,7 +28,7 @@ gem 'pg'
 gem 'dalli'
 
 # auth
-# gem 'devise', '>= 3.1.0'
+gem 'devise', '>= 3.1.0'
 # gem 'pundit'
 
 # views
