@@ -1,0 +1,16 @@
+= form_for @school_year do |f|
+  = render 'error_messages', target: @school_year
+
+  .field
+    = f.label :name
+    = f.text_field :name, autofocus: @school_year.new_record?
+  .field
+    = f.label :starts_on
+    br
+    = f.date_select :starts_on, include_blank: true
+  .field
+    = f.label :ends_on
+    br
+    = f.date_select :ends_on, include_blank: true
+
+  .actions = f.submit

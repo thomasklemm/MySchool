@@ -1,26 +1,27 @@
 = form_for @teacher do |f|
-  = render 'shared/error_messages', target: @teacher
+  = render 'error_messages', target: @teacher
 
   .field
     = f.label :last_name
-    = f.text_area :last_name
+    = f.text_field :last_name, autofocus: @teacher.new_record?
   .field
     = f.label :first_name
-    = f.text_area :first_name
+    = f.text_field :first_name
   .field
     = f.label :form_of_address
-    = f.text_area :form_of_address
+    = f.text_field :form_of_address
   .field
     = f.label :gender
-    = f.text_area :gender
+    = f.text_field :gender
   .field
     = f.label :date_of_birth
-    = f.date_select :date_of_birth, include_blank: true
+    br
+    = f.date_select :date_of_birth, include_blank: true, start_year: Time.now.year - 75, end_year: Time.now.year
   .field
     = f.label :email
-    = f.text_area :email
+    = f.email_field :email
   .field
     = f.label :shorthand_symbol
-    = f.text_area :shorthand_symbol
+    = f.text_field :shorthand_symbol
 
   .actions = f.submit

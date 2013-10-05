@@ -4,7 +4,7 @@
 /
 - if target.errors.any?
   .error-messages
-    h3 Bitte korrigieren Sie die folgenden Felder:
+    h4 Bitte korrigieren Sie die folgenden Felder:
     ul
       - target.errors.full_messages.each do |message|
         li = message

@@ -8,16 +8,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!-- Wrap all page content here -->
   <div id="wrap">
-
-    <!-- Begin page content -->
     <%= render 'navigation' %>
 
     <div class="container">
       <%= render 'flashes' %>
       <%= yield %>
-      <%= render 'javascript' %>
     </div>
   </div>
 
@@ -25,5 +21,7 @@
     <div class="container">
     </div>
   </div>
+
+  <%= render 'javascript' %>
 </body>
 </html>

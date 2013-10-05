@@ -1,0 +1,22 @@
+h1 Schuljahre
+
+table class='table table-striped'
+  tr
+    th = SchoolYear.human_attribute_name(:name)
+    th = SchoolYear.human_attribute_name(:starts_on)
+    th = SchoolYear.human_attribute_name(:ends_on)
+    th
+
+  - @school_years.each do |school_year|
+    tr
+      td = school_year.name
+      td = I18n.l school_year.starts_on
+      td = I18n.l school_year.ends_on
+      td
+        => link_to 'Anzeigen', school_year
+        => link_to 'Bearbeiten', edit_school_year_path(school_year)
+        = link_to 'Löschen', school_year, :confirm => 'Sind Sie sicher?', :method => :delete
+
+br
+
+= link_to 'Neues Schuljahr', new_school_year_path, class: 'btn btn-default'

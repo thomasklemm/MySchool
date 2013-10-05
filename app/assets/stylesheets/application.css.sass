@@ -20,3 +20,35 @@ $footer-height: 45px
 
 .page-header
   margin-top: -16px
+
+form
+  .field
+    @extend .form-group
+  input[type=text], textarea, input[type=email], input[type=search], input[type=password]
+    @extend .form-control
+  label
+    @extend .control-label
+
+  .field .field_with_errors
+    @extend .has-error
+
+  input[type=submit]
+    @extend .btn
+    @extend .btn-default
+
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+h1
+  @extend h2
+
+.error-messages
+  background-color: lighten($brand-danger, 20%)
+  padding: 1.5rem
+  margin: 1rem 0
+  border-radius: 2px
+
+  ul
+    margin: 0
+
+table
+  border: 1px solid #ddd

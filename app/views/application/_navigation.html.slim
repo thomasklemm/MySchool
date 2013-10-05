@@ -4,5 +4,11 @@ nav class='navbar navbar-default navbar-static-top'
     = link_to 'Meine Schule', root_path, class: 'navbar-brand'
 
     ul class='nav navbar-nav'
-      li = link_to 'Lehrer', teachers_path
-      li = link_to 'Schüler', students_path
+      = active_list_item :teachers do
+        = link_to 'Lehrer', teachers_path
+
+      = active_list_item :students do
+        = link_to 'Schüler', students_path
+
+      = active_list_item :school_years do
+        = link_to 'Schuljahre', school_years_path

@@ -1,6 +1,6 @@
-.page-header: h2 Lehrer
+h1 Lehrer
 
-table
+table class='table table-striped'
   tr
     th = Teacher.human_attribute_name(:last_name)
     th = Teacher.human_attribute_name(:first_name)
@@ -10,10 +10,10 @@ table
     th = Teacher.human_attribute_name(:email)
     th = Teacher.human_attribute_name(:shorthand_symbol)
     th
-    th
-    th
 
   - @teachers.each do |teacher|
+    - teacher = teacher.decorate
+
     tr
       td = teacher.last_name
       td = teacher.first_name
@@ -22,10 +22,11 @@ table
       td = teacher.date_of_birth
       td = teacher.email
       td = teacher.shorthand_symbol
-      td = link_to 'Anzeigen', teacher
-      td = link_to 'Bearbeiten', edit_teacher_path(teacher)
-      td = link_to 'Löschen', teacher, :confirm => 'Sind Sie sicher?', :method => :delete
+      td
+        => link_to 'Anzeigen', teacher
+        => link_to 'Bearbeiten', edit_teacher_path(teacher)
+        = link_to 'Löschen', teacher, :confirm => 'Sind Sie sicher?', :method => :delete
 
 br
 
-= link_to 'Neuer Lehrer', new_teacher_path
+= link_to 'Neuer Lehrer', new_teacher_path, class: 'btn btn-default'

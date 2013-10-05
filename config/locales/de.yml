@@ -204,6 +204,7 @@ de:
       <<: *errors
     models:
       school: Schule
+      school_year: Schuljahr
       student: Schüler
       teacher: Lehrer
     attributes:
@@ -220,8 +221,6 @@ de:
         web_page: Internetseite
         zip_code: PLZ
       student:
-        school: Schule
-        school_id: Schule
         last_name: Nachname
         first_name: Vorname
         form_of_address: Anrede
@@ -229,8 +228,6 @@ de:
         date_of_birth: Geburtsdatum
         email: Email
       teacher:
-        school: Schule
-        school_id: Schule
         last_name: Nachname
         first_name: Vorname
         form_of_address: Anrede
@@ -238,3 +235,7 @@ de:
         date_of_birth: Geburtsdatum
         email: Email
         shorthand_symbol: Kürzel
+      school_year:
+        name: Bezeichnung
+        starts_on: Beginnt am
+        ends_on: Endet am
