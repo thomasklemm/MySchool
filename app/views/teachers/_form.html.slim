@@ -1,0 +1,26 @@
+= form_for @teacher do |f|
+  = render 'shared/error_messages', target: @teacher
+
+  .field
+    = f.label :last_name
+    = f.text_area :last_name
+  .field
+    = f.label :first_name
+    = f.text_area :first_name
+  .field
+    = f.label :form_of_address
+    = f.text_area :form_of_address
+  .field
+    = f.label :gender
+    = f.text_area :gender
+  .field
+    = f.label :date_of_birth
+    = f.date_select :date_of_birth, include_blank: true
+  .field
+    = f.label :email
+    = f.text_area :email
+  .field
+    = f.label :shorthand_symbol
+    = f.text_area :shorthand_symbol
+
+  .actions = f.submit

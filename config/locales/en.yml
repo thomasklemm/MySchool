@@ -209,3 +209,34 @@ en:
   activerecord:
     errors:
       <<: *errors
+    models:
+      school: School
+      student: Student
+    attributes:
+      school:
+        created_at: 'Created at'
+        country: Country
+        email: Email
+        fax: Fax
+        name: Name
+        phone: Phone
+        street: Street
+        town: Town
+        updated_at: 'Updated at'
+        web_page: 'Web page'
+        zip_code: 'ZIP code'
+      student:
+        last_name: 'Last name'
+        first_name: 'First name'
+        form_of_address: 'Form of address'
+        gender: Gender
+        date_of_birth: 'Date of birth'
+        email: Email
+      teacher:
+        last_name: 'Last name'
+        first_name: 'First name'
+        form_of_address: 'Form of address'
+        gender: Gender
+        date_of_birth: 'Date of birth'
+        email: Email
+        shorthand_symbol: 'Shorthand symbol'

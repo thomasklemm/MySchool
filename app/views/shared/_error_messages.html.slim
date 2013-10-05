@@ -1,0 +1,10 @@
+/ error explanation
+/
+/ = render 'shared/error_explanation', target: @school
+/
+- if target.errors.any?
+  .error-messages
+    h3 Bitte korrigieren Sie die folgenden Felder:
+    ul
+      - target.errors.full_messages.each do |message|
+        li = message

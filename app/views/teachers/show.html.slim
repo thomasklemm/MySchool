@@ -1,0 +1,25 @@
+p
+  strong Last name:
+  = @teacher.last_name
+p
+  strong First name:
+  = @teacher.first_name
+p
+  strong Form of address:
+  = @teacher.form_of_address
+p
+  strong Gender:
+  = @teacher.gender
+p
+  strong Date of birth:
+  = @teacher.date_of_birth
+p
+  strong Email:
+  = @teacher.email
+p
+  strong Shorthand symbol:
+  = @teacher.shorthand_symbol
+
+=> link_to 'Bearbeiten', edit_teacher_path(@teacher)
+'|
+= link_to 'Zurück', teachers_path

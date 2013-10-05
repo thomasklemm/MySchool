@@ -1,11 +1,3 @@
-class Lehrer < ...
-  vorname
-  nachname
-  anrede
-  geschlecht
-  kuerzel
-end
-
 magellan lehrer
   vorname
   nachname

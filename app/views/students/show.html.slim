@@ -1,0 +1,22 @@
+p
+  strong Last name:
+  = @student.last_name
+p
+  strong First name:
+  = @student.first_name
+p
+  strong Form of address:
+  = @student.form_of_address
+p
+  strong Gender:
+  = @student.gender
+p
+  strong Date of birth:
+  = @student.date_of_birth
+p
+  strong Email:
+  = @student.email
+
+=> link_to 'Bearbeiten', edit_student_path(@student)
+'|
+= link_to 'Zurück', students_path

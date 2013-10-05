@@ -1,11 +1,3 @@
-class Schueler
-  nachname
-  vorname
-  anrede
-  geschlecht
-  geboren am
-end
-
 SCHUELER
   - Klasse soll einen Geburtstagskalender der Schueler anzeigen
   - Lehrer soll einen Geburtstagskalender seiner Schueler haben

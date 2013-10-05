@@ -1,3 +1,6 @@
 MySchool::Application.routes.draw do
-  root to: 'high_voltage/pages#show', id: 'home'
+  resources :students
+  resources :teachers
+
+  root to: redirect("/students")
 end

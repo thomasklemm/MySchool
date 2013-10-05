@@ -40,6 +40,7 @@ module MySchool
       generate.javascript_engine false
       generate.request_specs false
       generate.routing_specs false
+      generate.assets false
       generate.stylesheets false
       generate.test_framework :rspec, fixture: true
       generate.fixture_replacement :fabrication
