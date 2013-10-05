@@ -1,0 +1,8 @@
+/ navigation
+nav class='navbar navbar-default navbar-static-top'
+  div class='container'
+    = link_to 'Meine Schule', root_path, class: 'navbar-brand'
+
+    ul class='nav navbar-nav'
+      li = link_to 'Lehrer', teachers_path
+      li = link_to 'Schüler', students_path

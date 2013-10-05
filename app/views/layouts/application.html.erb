@@ -8,8 +8,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'flashes' -%>
-  <%= yield %>
-  <%= render 'javascript' %>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+
+    <!-- Begin page content -->
+    <%= render 'navigation' %>
+
+    <div class="container">
+      <%= render 'flashes' %>
+      <%= yield %>
+      <%= render 'javascript' %>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="container">
+    </div>
+  </div>
 </body>
 </html>
