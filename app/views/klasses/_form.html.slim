@@ -1,0 +1,8 @@
+= form_for @klass do |f|
+  = render 'error_messages', target: @klass
+
+  .field
+    = f.label :name
+    = f.text_field :name
+
+  .actions = f.submit

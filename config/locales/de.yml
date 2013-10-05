@@ -203,11 +203,15 @@ de:
     errors:
       <<: *errors
     models:
+      klass: Klasse
       school: Schule
       school_year: Schuljahr
       student: Schüler
       teacher: Lehrer
     attributes:
+      klass:
+        name: Bezeichnung
+        school_year: Schuljahr
       school:
         created_at: 'Erstellt am'
         country: Land

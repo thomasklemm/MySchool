@@ -1,0 +1,20 @@
+h1
+  ' Klassen
+  small im #{ current_school_year.name }
+
+table class='table table-striped'
+  tr
+    th = Klass.human_attribute_name(:name)
+    th
+
+  - @klasses.each do |klass|
+    tr
+      td = klass.name
+      td
+        => link_to 'Anzeigen', klass
+        => link_to 'Bearbeiten', edit_klass_path(klass)
+        = link_to 'Löschen', klass, :confirm => 'Sind Sie sicher?', :method => :delete
+
+br
+
+= link_to 'Neue Klasse', new_klass_path, class: 'btn btn-default'
