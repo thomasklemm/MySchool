@@ -10,4 +10,8 @@ class Student < ActiveRecord::Base
   def name
     "#{first_name} #{last_name}"
   end
+
+  def current_klass
+    klasses.first
+  end
 end

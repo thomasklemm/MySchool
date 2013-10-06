@@ -5,11 +5,13 @@ h1
 table class='table table-striped'
   tr
     th = Klass.human_attribute_name(:name)
+    th = Klass.human_attribute_name(:students_count)
     th
 
   - @klasses.each do |klass|
     tr
       td = klass.name
+      td = klass.students.size
       td
         => link_to 'Anzeigen', klass
         => link_to 'Bearbeiten', edit_klass_path(klass)

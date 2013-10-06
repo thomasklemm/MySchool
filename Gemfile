@@ -70,6 +70,9 @@ group :development do
   # mailers
   gem 'letter_opener'
 
+  # fake records
+  gem 'ffaker'
+
   # utility
   gem 'foreman'
   gem 'quiet_assets'

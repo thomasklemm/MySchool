@@ -3,3 +3,6 @@ h1
   small im #{ @klass.school_year.name }
 = link_to 'Bearbeiten', edit_klass_path(@klass)
 
+= link_to 'Schüler', [@klass, :students]
+= link_to 'Geburtstagskalender', [@klass, :birthdays]
+

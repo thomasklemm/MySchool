@@ -91,6 +91,7 @@ GEM
     eventmachine (1.0.3)
     execjs (2.0.2)
     fabrication (2.8.1)
+    ffaker (1.19.0)
     ffi (1.9.0)
     figaro (0.7.0)
       bundler (~> 1.0)
@@ -285,6 +286,7 @@ DEPENDENCIES
   draper
   email_validator
   fabrication
+  ffaker
   figaro
   foreman
   guard-livereload

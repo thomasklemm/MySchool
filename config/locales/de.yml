@@ -212,6 +212,7 @@ de:
       klass:
         name: Bezeichnung
         school_year: Schuljahr
+        students_count: Klassengröße
       school:
         created_at: 'Erstellt am'
         country: Land
@@ -225,6 +226,7 @@ de:
         web_page: Internetseite
         zip_code: PLZ
       student:
+        current_klass: Klasse
         last_name: Nachname
         first_name: Vorname
         form_of_address: Anrede

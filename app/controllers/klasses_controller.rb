@@ -48,7 +48,7 @@ class KlassesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_klass
-      @klass = current_school_year.klasses.find(params[:id])
+      @klass = current_school_year.klasses.find(params[:klass_id] || params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
