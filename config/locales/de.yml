@@ -229,9 +229,11 @@ de:
         current_klass: Klasse
         last_name: Nachname
         first_name: Vorname
+        name: Name
         form_of_address: Anrede
         gender: Geschlecht
         date_of_birth: Geburtsdatum
+        birthday: Geburtstag
         email: Email
       teacher:
         last_name: Nachname

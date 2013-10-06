@@ -1,17 +1,19 @@
 h1
   ' Geburtstagskalender
-  small der Klasse #{ @klass.name }
+  small der Klasse #{ @klass.name } im #{ current_school_year.name }
 
 table class='table table-striped'
   thead
     tr
-      th Name
-      th Geburtstag (Alter)
+      th = Student.human_attribute_name(:name)
+      th = Student.human_attribute_name(:birthday)
 
   tbody
     - @students.each do |student|
       - student = student.decorate
 
-      tr
+      = content_tag :tr, class: student.birthday_today? ? 'success' : nil do
         td = student.name
-        td = student.date_of_birth
+        td
+          => student.birthday
+          = '(Heute)' if student.birthday_today?
