@@ -10,13 +10,10 @@ table class='table table-striped'
 
   - @klasses.each do |klass|
     tr
-      td = klass.name
+      td: b = link_to klass.name, [klass, :students]
       td = klass.students.size
-      td
-        => link_to 'Anzeigen', klass
-        => link_to 'Bearbeiten', edit_klass_path(klass)
+      td class='actions'
+        = link_to 'Bearbeiten', edit_klass_path(klass)
         = link_to 'Löschen', klass, :confirm => 'Sind Sie sicher?', :method => :delete
-
-br
 
 = link_to 'Neue Klasse', new_klass_path, class: 'btn btn-default'

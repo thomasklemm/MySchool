@@ -205,6 +205,7 @@ de:
     models:
       course: Fach
       klass: Klasse
+      test: Klassenarbeit
       school: Schule
       school_year: Schuljahr
       student: Schüler
@@ -258,6 +259,13 @@ de:
         email: Email
       course:
         name: Bezeichnung
+        teacher: Lehrer
+        teacher_id: Lehrer
+      test:
+        klass: Klasse
+        klass_id: Klasse
+        name: Bezeichnung
+        date: Datum
         teacher: Lehrer
         teacher_id: Lehrer
 

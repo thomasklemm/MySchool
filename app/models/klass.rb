@@ -6,5 +6,6 @@ class Klass < ActiveRecord::Base
   has_many :course_klasses
   has_many :courses, through: :course_klasses
   has_many :teachers, -> { uniq }, through: :courses
+  has_many :tests
   validates :school_year_id, :name, presence: true
 end

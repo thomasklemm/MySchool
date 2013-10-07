@@ -1,20 +1,22 @@
 / klass layout
 - content_for :content do
+  - @klass ||= @test.klass
+
   / klass nav
-  h1
-    ' Klasse #{ @klass.name }
-    small im #{ @klass.school_year.name }
+  div class='list-group col-sm-3' style='margin-top: 42px'
+    = list_group_link_to 'Schüler', [@klass, :students]
+    = list_group_link_to 'Eltern', [@klass, :parents]
+    = list_group_link_to 'Lehrer', [@klass, :teachers]
+    = list_group_link_to 'Fächer', [@klass, :courses]
+    = list_group_link_to 'Schulaufgabenkalender', [@klass, :tests]
+    = list_group_link_to 'Geburtstagskalender', [@klass, :birthdays]
+    = list_group_link_to 'Klasse bearbeiten', edit_klass_path(@klass)
 
-  ul class='list-inline'
-    li = link_to 'Schüler', [@klass, :students]
-    li = link_to 'Eltern', [@klass, :parents]
-    li = link_to 'Lehrer', [@klass, :teachers]
-    li = link_to 'Fächer', [@klass, :courses]
-    li = link_to 'Geburtstagskalender', [@klass, :birthdays]
-    li = link_to 'Klasse bearbeiten', edit_klass_path(@klass)
+  div class='col-sm-9'
+    h1
+      ' Klasse #{ @klass.name }
+      small im #{ @klass.school_year.name }
 
-  hr
-
-  = yield
+    = yield
 
 = render template: "layouts/application"

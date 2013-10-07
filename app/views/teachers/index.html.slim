@@ -24,11 +24,9 @@ table class='table table-striped'
       td = teacher.date_of_birth
       td = teacher.email
       td = teacher.shorthand_symbol
-      td
-        => link_to 'Anzeigen', teacher
-        => link_to 'Bearbeiten', edit_teacher_path(teacher)
+      td class='actions'
+        = link_to 'Anzeigen', teacher
+        = link_to 'Bearbeiten', edit_teacher_path(teacher)
         = link_to 'Löschen', teacher, :confirm => 'Sind Sie sicher?', :method => :delete
-
-br
 
 = link_to 'Neuer Lehrer', new_teacher_path, class: 'btn btn-default'

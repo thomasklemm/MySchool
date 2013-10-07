@@ -20,11 +20,9 @@ table class='table table-striped'
       td = parent.gender
       td = parent.date_of_birth
       td = parent.email
-      td
-        => link_to 'Anzeigen', parent
-        => link_to 'Bearbeiten', edit_parent_path(parent)
+      td class='actions'
+        = link_to 'Anzeigen', parent
+        = link_to 'Bearbeiten', edit_parent_path(parent)
         = link_to 'Löschen', parent, :confirm => 'Sind Sie sicher?', :method => :delete
-
-br
 
 = link_to 'Neues Elternteil', new_parent_path, class: 'btn btn-default'

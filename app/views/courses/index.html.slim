@@ -10,11 +10,9 @@ table class='table table-striped'
     tr
       td = course.name
       td = course.teacher.name
-      td
-        => link_to 'Anzeigen', [@klass, course]
-        => link_to 'Bearbeiten', edit_klass_course_path(@klass, course)
-        = link_to 'Löschen', [@klass, course], :confirm => 'Sind Sie sicher?', :method => :delete
-
-br
+      td class='actions'
+        = link_to 'Anzeigen', course
+        = link_to 'Bearbeiten', edit_course_path(course)
+        = link_to 'Löschen', course, :confirm => 'Sind Sie sicher?', :method => :delete
 
 = link_to 'Neues Fach', new_klass_course_path(@klass), class: 'btn btn-default'

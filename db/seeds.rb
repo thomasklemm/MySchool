@@ -118,11 +118,12 @@ courses = []
 
 Klass.find_each do |klass|
   COURSE_NAMES.each do |course_name|
-    course = klass.courses.create! do |c|
+    course = school_year.courses.create! do |c|
       c.name = course_name
       c.teacher = teachers.sample
     end
 
+    klass.courses << course
     courses << course
 
     course.students = klass.students
@@ -130,3 +131,18 @@ Klass.find_each do |klass|
 end
 
 p "Course Create: #{ courses.size } courses"
+
+tests = []
+Klass.find_each do |klass|
+  15.times do
+    test = klass.tests.create! do |t|
+      t.name = "#{%w(1 2 3 4).sample}. #{COURSE_NAMES.sample} #{%w(Schulaufgabe Stegreifaufgabe).sample}"
+      t.date = school_year.weekdays.sample
+      t.teacher = klass.teachers.sample
+    end
+
+    tests << test
+  end
+end
+
+p "Test Create: #{tests.size} tests"

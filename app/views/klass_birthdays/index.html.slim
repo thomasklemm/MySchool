@@ -3,15 +3,16 @@ h2 Geburtstagskalender
 table class='table table-striped'
   thead
     tr
-      th = Student.human_attribute_name(:name)
       th = Student.human_attribute_name(:birthday)
+      th Schüler
 
   tbody
     - @students.each do |student|
       - student = student.decorate
 
       = content_tag :tr, class: student.birthday_today? ? 'success' : nil do
-        td = student.name
         td
           => student.birthday
+          => "(#{student.age_on_birthday_in_school_year})"
           = '(Heute)' if student.birthday_today?
+        td = student.name

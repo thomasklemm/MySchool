@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     @current_school_year ||= current_school.school_years.first
   end
 
+  def set_klass
+    @klass ||= current_school_year.klasses.find(params[:klass_id])
+  end
+
   # def default_url_options
   #   { host: 'my_school.dev' }
   # end

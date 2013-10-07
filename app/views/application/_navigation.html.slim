@@ -1,21 +1,20 @@
 / navigation
 nav class='navbar navbar-default navbar-static-top'
-  div class='container'
-    = link_to 'Meine Schule', root_path, class: 'navbar-brand'
+  = link_to 'Meine Schule', root_path, class: 'navbar-brand'
 
-    ul class='nav navbar-nav'
-      = active_list_item :klasses do
-        = link_to 'Klassen', klasses_path
+  ul class='nav navbar-nav'
+    = active_list_item :klasses do
+      = link_to 'Klassen', klasses_path
 
-      = active_list_item :teachers do
-        = link_to 'Lehrer', teachers_path
+    = active_list_item :teachers do
+      = link_to 'Lehrer', teachers_path
 
-      = active_list_item :students do
-        = link_to 'Schüler', students_path
+    = active_list_item :students do
+      = link_to 'Schüler', students_path
 
-      = active_list_item :parents do
-        = link_to 'Eltern', parents_path
+    = active_list_item :parents do
+      = link_to 'Eltern', parents_path
 
-      = active_list_item :school_years do
-        = link_to 'Schuljahre', school_years_path
+    = active_list_item :school_years do
+      = link_to 'Schuljahre', school_years_path
 

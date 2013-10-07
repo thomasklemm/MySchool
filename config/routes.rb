@@ -4,12 +4,13 @@ MySchool::Application.routes.draw do
   resources :parents
   resources :school_years
 
-  resources :klasses do
+  resources :klasses, shallow: true do
     resources :students, controller: 'klass_students', only: :index
     resources :parents, controller: 'klass_parents', only: :index
     resources :teachers, controller: 'klass_teachers', only: :index
     resources :birthdays, controller: 'klass_birthdays', only: :index
     resources :courses
+    resources :tests
   end
 
   root 'teachers#index'

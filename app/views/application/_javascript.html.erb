@@ -7,3 +7,11 @@
     $.ajaxSetup({ async: false });
   <% end %>
 <% end %>
+
+
+<%= javascript_tag do %>
+  $('#test_date').datepicker({
+    language: "de",
+    calendarWeeks: true
+  });
+<% end %>

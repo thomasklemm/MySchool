@@ -1,0 +1,29 @@
+= form_for [@klass, @test] do |f|
+  = render 'error_messages', target: @test
+
+  .field
+    = f.label :name
+    = f.text_field :name, autofocus: @test.new_record?
+
+  / .field
+  /   = f.label :date
+  /   br
+  /   = f.date_select :date, prompt: true
+
+  .field
+    = f.label :date
+    .input-group
+      span class='input-group-addon' = icon_tag(:calendar)
+      = f.text_field :date, value: @test.date.present? ? I18n.l(@test.date) : nil
+
+  / .field
+  /   = f.label :klass_id
+  /   br
+  /   = f.collection_select :klass_id, current_school_year.klasses, :id, :name, prompt: true
+
+  .field
+    = f.label :teacher_id
+    br
+    = f.collection_select :teacher_id, current_school.teachers, :id, :name, prompt: true
+
+  .actions = f.submit

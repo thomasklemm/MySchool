@@ -14,11 +14,9 @@ table class='table table-striped'
       td = school_year.name
       td = I18n.l school_year.start_date
       td = I18n.l school_year.end_date
-      td
-        => link_to 'Anzeigen', school_year
-        => link_to 'Bearbeiten', edit_school_year_path(school_year)
+      td class='actions'
+        = link_to 'Anzeigen', school_year
+        = link_to 'Bearbeiten', edit_school_year_path(school_year)
         = link_to 'Löschen', school_year, :confirm => 'Sind Sie sicher?', :method => :delete
-
-br
 
 = link_to 'Neues Schuljahr', new_school_year_path, class: 'btn btn-default'

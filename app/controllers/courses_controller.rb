@@ -1,5 +1,7 @@
-class CoursesController < KlassController
+class CoursesController < ApplicationController
+  before_action :set_klass, only: [:index, :new, :create]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  layout 'klass', only: [:index, :new]
 
   # GET /courses
   def index
@@ -21,14 +23,14 @@ class CoursesController < KlassController
 
   # POST /courses
   def create
-    @course = @klass.courses.build(course_params)
+    @course = @klass.courses.build(course_params.merge(school_year: current_school_year))
 
     if @course.save
       # FIXME: This should not be nescessary!
       @klass.courses << @course
       @course.students = @klass.students
 
-      redirect_to [@klass, @course], notice: 'Fach wurde erfolgreich erstellt.'
+      redirect_to @course, notice: 'Fach wurde erfolgreich erstellt.'
     else
       render action: 'new'
     end
@@ -37,7 +39,7 @@ class CoursesController < KlassController
   # PATCH/PUT /courses/1
   def update
     if @course.update(course_params)
-      redirect_to [@klass, @course], notice: 'Fach wurde erfolgreich aktualisiert.'
+      redirect_to @course, notice: 'Fach wurde erfolgreich aktualisiert.'
     else
       render action: 'edit'
     end
@@ -46,13 +48,13 @@ class CoursesController < KlassController
   # DELETE /courses/1
   def destroy
     @course.destroy
-    redirect_to [@klass, :courses], notice: 'Fach wurde erfolgreich gelöscht.'
+    redirect_to klasses_url, notice: 'Fach wurde erfolgreich gelöscht.'
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = @klass.courses.find(params[:id])
+      @course = current_school_year.courses.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

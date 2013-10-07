@@ -21,7 +21,7 @@ class StudentDecorator < Draper::Decorator
   end
 
   def age_on_birthday_in_school_year
-    birthday_calculator.ago_on_birthday_in_term
+    birthday_calculator.age_on_birthday_in_term
   end
 
   private

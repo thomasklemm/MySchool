@@ -18,6 +18,4 @@ table class='table table-striped'
         = '(Heute)' if student.birthday_today?
       td = link_to 'Anzeigen', student
 
-br
-
 = link_to 'Schüler hinzufügen', [@klass, :students], class: 'btn btn-default'

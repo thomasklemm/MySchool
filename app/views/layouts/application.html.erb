@@ -5,21 +5,18 @@
   <meta name="ROBOTS" content="NOODP" />
   <title>Meine Schule</title>
   <%= stylesheet_link_tag :application, :media => 'all' %>
+  <%= stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div id="wrap">
     <%= render 'navigation' %>
 
-    <div class="container">
-      <%= render 'flashes' %>
-      <%= content_for?(:content) ? yield(:content) : yield %>
-    </div>
+    <%= render 'flashes' %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
   </div>
 
   <div id="footer">
-    <div class="container">
-    </div>
   </div>
 
   <%= render 'javascript' %>
