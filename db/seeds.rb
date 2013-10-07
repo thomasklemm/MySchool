@@ -37,20 +37,12 @@ end
 p "School Create: #{ school.name }"
 
 school_year = school.school_years.create! do |y|
-  y.name       = 'Schuljahr 2013/2014'
-  y.start_date = '2013-08-01'.to_date
-  y.end_date   = '2014-07-31'.to_date
-end
-
-p "SchoolYear Create: #{ school_year.name }"
-
-second_school_year = school.school_years.create! do |y|
   y.name       = 'Schuljahr 2014/2015'
   y.start_date = '2014-08-01'.to_date
   y.end_date   = '2015-07-31'.to_date
 end
 
-p "SchoolYear Create: #{ second_school_year.name }"
+p "SchoolYear Create: #{ school_year.name }"
 
 KLASS_NAMES = %w(5a 5b 6a 7a 8a 9a)
 klasses = KLASS_NAMES.each_with_object([]) do |name, ary|
@@ -120,3 +112,22 @@ end
 
 p "Student Create: #{ students.size } students"
 p "Parent Create: #{ parents.size } parents"
+
+COURSE_NAMES = %w(Deutsch Englisch Französisch Latein Mathematik Physik Erdkunde Geschichte Wirtschaft\ und\ Recht Musik Kunst)
+courses = []
+
+Klass.find_each do |klass|
+  COURSE_NAMES.each do |course_name|
+    course = klass.courses.create! do |c|
+      c.name = course_name
+      c.teacher = teachers.sample
+      c.school_year = school_year
+    end
+
+    courses << course
+
+    course.students = klass.students
+  end
+end
+
+p "Course Create: #{ courses.size } courses"

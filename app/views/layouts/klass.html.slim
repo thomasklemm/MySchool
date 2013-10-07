@@ -1,0 +1,19 @@
+/ klass layout
+- content_for :content do
+  / klass nav
+  h1
+    ' Klasse #{ @klass.name }
+    small im #{ @klass.school_year.name }
+
+  ul class='list-inline'
+    li = link_to 'Schüler', [@klass, :students]
+    li = link_to 'Eltern', [@klass, :parents]
+    li = link_to 'Lehrer', [@klass, :teachers]
+    li = link_to 'Geburtstagskalender', [@klass, :birthdays]
+    li = link_to 'Klasse bearbeiten', edit_klass_path(@klass)
+
+  hr
+
+  = yield
+
+= render template: "layouts/application"

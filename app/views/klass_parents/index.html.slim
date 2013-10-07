@@ -1,0 +1,17 @@
+h2 Eltern
+
+table class='table table-striped'
+  tr
+    th = Parent.human_attribute_name(:last_name)
+    th = Parent.human_attribute_name(:first_name)
+    th = Parent.human_attribute_name(:students)
+    th
+
+  - @parents.each do |parent|
+    - parent = parent.decorate
+
+    tr
+      td = parent.last_name
+      td = parent.first_name
+      td == parent.students.map { |student| link_to student.name_and_current_klass, student }.to_sentence
+      td = link_to 'Anzeigen', parent

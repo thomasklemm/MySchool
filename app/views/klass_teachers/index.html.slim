@@ -1,0 +1,17 @@
+h2 Lehrer
+
+table class='table table-striped'
+  tr
+    th = Teacher.human_attribute_name(:last_name)
+    th = Teacher.human_attribute_name(:first_name)
+    th = Teacher.human_attribute_name(:course_name)
+    th
+
+  - @teachers.each do |teacher|
+    - teacher = teacher.decorate
+
+    tr
+      td = teacher.last_name
+      td = teacher.first_name
+      td = @klass.courses.where(teacher_id: teacher.id).map(&:name).to_sentence
+      td = link_to 'Anzeigen', teacher
