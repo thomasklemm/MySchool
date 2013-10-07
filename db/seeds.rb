@@ -121,7 +121,6 @@ Klass.find_each do |klass|
     course = klass.courses.create! do |c|
       c.name = course_name
       c.teacher = teachers.sample
-      c.school_year = school_year
     end
 
     courses << course

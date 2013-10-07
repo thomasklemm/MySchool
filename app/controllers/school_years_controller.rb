@@ -12,7 +12,7 @@ class SchoolYearsController < ApplicationController
 
   # GET /school_years/new
   def new
-    @school_year = current_school.school_years.new
+    @school_year = current_school.school_years.build
   end
 
   # GET /school_years/1/edit
@@ -21,7 +21,7 @@ class SchoolYearsController < ApplicationController
 
   # POST /school_years
   def create
-    @school_year = current_school.school_years.new(school_year_params)
+    @school_year = current_school.school_years.build(school_year_params)
 
     if @school_year.save
       redirect_to @school_year, notice: 'Schuljahr wurde erfolgreich erstellt.'

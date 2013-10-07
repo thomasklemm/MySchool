@@ -12,7 +12,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/new
   def new
-    @teacher = current_school.teachers.new
+    @teacher = current_school.teachers.build
   end
 
   # GET /teachers/1/edit
@@ -21,7 +21,7 @@ class TeachersController < ApplicationController
 
   # POST /teachers
   def create
-    @teacher = current_school.teachers.new(teacher_params)
+    @teacher = current_school.teachers.build(teacher_params)
 
     if @teacher.save
       redirect_to @teacher, notice: 'Lehrer wurde erfolgreich erstellt.'

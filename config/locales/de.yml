@@ -203,6 +203,7 @@ de:
     errors:
       <<: *errors
     models:
+      course: Fach
       klass: Klasse
       school: Schule
       school_year: Schuljahr
@@ -255,3 +256,8 @@ de:
         gender: Geschlecht
         date_of_birth: Geburtsdatum
         email: Email
+      course:
+        name: Bezeichnung
+        teacher: Lehrer
+        teacher_id: Lehrer
+

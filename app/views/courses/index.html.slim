@@ -1,25 +1,20 @@
-h1 Listing courses
+h2 Fächer
 
-table
+table class='table table-striped'
   tr
-    th School
-    th School year
-    th Name
-    th Teacher
-    th
-    th
+    th = Course.human_attribute_name(:name)
+    th = Course.human_attribute_name(:teacher)
     th
 
   - @courses.each do |course|
     tr
-      td = course.school
-      td = course.school_year
       td = course.name
-      td = course.teacher
-      td = link_to 'Show', course
-      td = link_to 'Edit', edit_course_path(course)
-      td = link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete
+      td = course.teacher.name
+      td
+        => link_to 'Anzeigen', [@klass, course]
+        => link_to 'Bearbeiten', edit_klass_course_path(@klass, course)
+        = link_to 'Löschen', [@klass, course], :confirm => 'Sind Sie sicher?', :method => :delete
 
 br
 
-= link_to 'New Course', new_course_path
+= link_to 'Neues Fach', new_klass_course_path(@klass), class: 'btn btn-default'

@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = current_school.students.new
+    @student = current_school.students.build
   end
 
   # GET /students/1/edit
@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
 
   # POST /students
   def create
-    @student = current_school.students.new(student_params)
+    @student = current_school.students.build(student_params)
 
     if @student.save
       redirect_to @student, notice: 'Schuler wurde erfolgreich erstellt.'

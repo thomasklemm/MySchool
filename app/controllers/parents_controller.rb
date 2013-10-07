@@ -12,7 +12,7 @@ class ParentsController < ApplicationController
 
   # GET /parents/new
   def new
-    @parent = current_school.parents.new
+    @parent = current_school.parents.build
   end
 
   # GET /parents/1/edit
@@ -21,7 +21,7 @@ class ParentsController < ApplicationController
 
   # POST /parents
   def create
-    @parent = current_school.parents.new(parent_params)
+    @parent = current_school.parents.build(parent_params)
 
     if @parent.save
       redirect_to @parent, notice: 'Elternteil wurde erfolgreich erstellt.'

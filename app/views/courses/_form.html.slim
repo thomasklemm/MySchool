@@ -1,21 +1,12 @@
-= form_for @course do |f|
-  - if @course.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@course.errors.count, "error")} prohibited this course from being saved:"
-      ul
-        - @course.errors.full_messages.each do |message|
-          li = message
+= form_for [@klass, @course] do |f|
+  = render 'error_messages', target: @course
 
   .field
-    = f.label :school
-    = f.text_field :school
-  .field
-    = f.label :school_year
-    = f.text_field :school_year
-  .field
     = f.label :name
-    = f.text_area :name
+    = f.text_field :name, autofocus: @course.new_record?
   .field
-    = f.label :teacher
-    = f.text_field :teacher
-  .actions = f.submit 'Save'
+    = f.label :teacher_id
+    br
+    = f.collection_select :teacher_id, current_school.teachers, :id, :name, prompt: true
+
+  .actions = f.submit

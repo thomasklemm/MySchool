@@ -13,7 +13,7 @@ class KlassesController < ApplicationController
 
   # GET /klasses/new
   def new
-    @klass = current_school_year.klasses.new
+    @klass = current_school_year.klasses.build
   end
 
   # GET /klasses/1/edit
@@ -22,7 +22,7 @@ class KlassesController < ApplicationController
 
   # POST /klasses
   def create
-    @klass = current_school_year.klasses.new(klass_params)
+    @klass = current_school_year.klasses.build(klass_params)
 
     if @klass.save
       redirect_to @klass, notice: 'Klasse wurde erfolgreich erstellt.'
