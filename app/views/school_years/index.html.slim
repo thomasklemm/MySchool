@@ -5,15 +5,15 @@ h1
 table class='table table-striped'
   tr
     th = SchoolYear.human_attribute_name(:name)
-    th = SchoolYear.human_attribute_name(:starts_on)
-    th = SchoolYear.human_attribute_name(:ends_on)
+    th = SchoolYear.human_attribute_name(:start_date)
+    th = SchoolYear.human_attribute_name(:end_date)
     th
 
   - @school_years.each do |school_year|
     tr
       td = school_year.name
-      td = I18n.l school_year.starts_on
-      td = I18n.l school_year.ends_on
+      td = I18n.l school_year.start_date
+      td = I18n.l school_year.end_date
       td
         => link_to 'Anzeigen', school_year
         => link_to 'Bearbeiten', edit_school_year_path(school_year)

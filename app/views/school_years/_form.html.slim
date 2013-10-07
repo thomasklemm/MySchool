@@ -5,12 +5,12 @@
     = f.label :name
     = f.text_field :name, autofocus: @school_year.new_record?
   .field
-    = f.label :starts_on
+    = f.label :start_date
     br
-    = f.date_select :starts_on, include_blank: true
+    = f.date_select :start_date, include_blank: true
   .field
-    = f.label :ends_on
+    = f.label :end_date
     br
-    = f.date_select :ends_on, include_blank: true
+    = f.date_select :end_date, include_blank: true
 
   .actions = f.submit

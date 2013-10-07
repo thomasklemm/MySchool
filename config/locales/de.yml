@@ -208,6 +208,7 @@ de:
       school_year: Schuljahr
       student: Schüler
       teacher: Lehrer
+      parent: Elternteil
     attributes:
       klass:
         name: Bezeichnung
@@ -245,5 +246,12 @@ de:
         shorthand_symbol: Kürzel
       school_year:
         name: Bezeichnung
-        starts_on: Beginnt am
-        ends_on: Endet am
+        start_date: Beginn
+        end_date: Ende
+      parent:
+        last_name: Nachname
+        first_name: Vorname
+        form_of_address: Anrede
+        gender: Geschlecht
+        date_of_birth: Geburtsdatum
+        email: Email

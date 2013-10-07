@@ -1,0 +1,30 @@
+h1 Eltern
+
+table class='table table-striped'
+  tr
+    th = Parent.human_attribute_name(:last_name)
+    th = Parent.human_attribute_name(:first_name)
+    th = Parent.human_attribute_name(:form_of_address)
+    th = Parent.human_attribute_name(:gender)
+    th = Parent.human_attribute_name(:date_of_birth)
+    th = Parent.human_attribute_name(:email)
+    th
+
+  - @parents.each do |parent|
+    - parent = parent.decorate
+
+    tr
+      td = parent.last_name
+      td = parent.first_name
+      td = parent.form_of_address
+      td = parent.gender
+      td = parent.date_of_birth
+      td = parent.email
+      td
+        => link_to 'Anzeigen', parent
+        => link_to 'Bearbeiten', edit_parent_path(parent)
+        = link_to 'Löschen', parent, :confirm => 'Sind Sie sicher?', :method => :delete
+
+br
+
+= link_to 'Neues Elternteil', new_parent_path, class: 'btn btn-default'

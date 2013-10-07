@@ -3,8 +3,8 @@ class CreateSchoolYears < ActiveRecord::Migration
     create_table :school_years do |t|
       t.belongs_to :school, index: true
       t.text :name
-      t.date :starts_on
-      t.date :ends_on
+      t.date :start_date
+      t.date :end_date
 
       t.timestamps
     end

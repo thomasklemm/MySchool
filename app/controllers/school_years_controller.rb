@@ -53,6 +53,6 @@ class SchoolYearsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def school_year_params
-      params.require(:school_year).permit(:name, :starts_on, :ends_on)
+      params.require(:school_year).permit(:name, :start_date, :end_date)
     end
 end

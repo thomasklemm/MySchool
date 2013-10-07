@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong School:
+  = @parent.school
+p
+  strong Last name:
+  = @parent.last_name
+p
+  strong First name:
+  = @parent.first_name
+p
+  strong Form of address:
+  = @parent.form_of_address
+p
+  strong Gender:
+  = @parent.gender
+p
+  strong Date of birth:
+  = @parent.date_of_birth
+p
+  strong Email:
+  = @parent.email
+
+= link_to 'Edit', edit_parent_path(@parent)
+'|
+= link_to 'Back', parents_path
