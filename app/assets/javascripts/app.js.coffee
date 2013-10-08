@@ -18,8 +18,24 @@ $ ->
 
   testsCalendarOptions = $.extend(localCalendarOptions, {
       weekends: false,
-      events: $('#tests-calendar').data('tests'),
-      backgroundColor: '#900'
+      eventSources: [
+        {
+          events: $('#tests-calendar').data('tests'),
+          color: 'blue'
+        },
+        {
+          # feiertage in bayern
+          url: 'https://www.google.com/calendar/feeds/lofluq81gi3mjogddkldetu4i4%40group.calendar.google.com/public/basic',
+          color: 'red',
+          cache: true
+        },
+        {
+          # ferientage in bayern
+          url: 'https://www.google.com/calendar/feeds/f9jqir1be9lku30c13sfasf8u4%40group.calendar.google.com/public/basic',
+          color: 'green',
+          cache: true
+        }
+      ]
     })
 
   $('#tests-calendar').fullCalendar(testsCalendarOptions)
