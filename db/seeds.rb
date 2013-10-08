@@ -37,9 +37,9 @@ end
 p "School Create: #{ school.name }"
 
 school_year = school.school_years.create! do |y|
-  y.name       = 'Schuljahr 2014/2015'
-  y.start_date = '2014-08-01'.to_date
-  y.end_date   = '2015-07-31'.to_date
+  y.name       = 'Schuljahr 2013/2014'
+  y.start_date = '2013-08-01'.to_date
+  y.end_date   = '2014-07-31'.to_date
 end
 
 p "SchoolYear Create: #{ school_year.name }"
@@ -134,7 +134,7 @@ p "Course Create: #{ courses.size } courses"
 
 tests = []
 Klass.find_each do |klass|
-  15.times do
+  20.times do
     test = klass.tests.create! do |t|
       t.name = "#{%w(1 2 3 4).sample}. #{COURSE_NAMES.sample} #{%w(Schulaufgabe Stegreifaufgabe).sample}"
       t.date = school_year.weekdays.sample

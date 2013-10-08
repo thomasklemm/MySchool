@@ -1,23 +1,27 @@
 h2 Klassenarbeiten
 
-table class='table table-striped'
-  tr
-    th = Test.human_attribute_name(:klass)
-    th = Test.human_attribute_name(:date)
-    th = Test.human_attribute_name(:name)
-    th = Test.human_attribute_name(:teacher)
-    th class='hidden-print'
+= content_tag :div, '', id: 'tests-calendar', data: { tests: @tests.as_json }
 
-  - @tests.each do |test|
-    - test = test.decorate
+.space-two
 
-    tr
-      td = test.klass.try(:name)
-      td = test.date
-      td = test.name
-      td = test.teacher.try(:name)
-      td class='actions hidden-print'
-        = link_to 'Bearbeiten', edit_test_path(test)
-        = link_to 'Löschen', test_path(test), :confirm => 'Sind Sie sicher?', :method => :delete
+/ table class='table table-striped'
+/   tr
+/     th = Test.human_attribute_name(:klass)
+/     th = Test.human_attribute_name(:date)
+/     th = Test.human_attribute_name(:name)
+/     th = Test.human_attribute_name(:teacher)
+/     th class='hidden-print'
+
+/   - @tests.each do |test|
+/     - test = test.decorate
+
+/     tr
+/       td = test.klass.try(:name)
+/       td = test.date
+/       td = test.name
+/       td = test.teacher.try(:name)
+/       td class='actions hidden-print'
+/         = link_to 'Bearbeiten', edit_test_path(test)
+/         = link_to 'Löschen', test_path(test), :confirm => 'Sind Sie sicher?', :method => :delete
 
 = link_to 'Neue Klassenarbeit', new_klass_test_path(@klass), class: 'btn btn-default hidden-print'
