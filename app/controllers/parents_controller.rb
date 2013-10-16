@@ -3,7 +3,7 @@ class ParentsController < ApplicationController
 
   # GET /parents
   def index
-    @parents = current_school.parents.by_name
+    @parents = current_school.parents
   end
 
   # GET /parents/1

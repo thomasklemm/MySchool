@@ -6,4 +6,6 @@ class Course < ActiveRecord::Base
   has_many :course_students
   has_many :students, through: :course_students
   validates :name, :teacher_id, :school_year_id, presence: true
+  scope :by_name, -> { order(:name) }
+  default_scope { by_name }
 end

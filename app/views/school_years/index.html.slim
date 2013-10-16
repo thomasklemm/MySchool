@@ -19,6 +19,6 @@ table class='table table-striped'
       td = school_year.end_date
       td class='actions'
         = link_to 'Bearbeiten', edit_school_year_path(school_year)
-        = link_to 'Löschen', school_year, :confirm => 'Sind Sie sicher?', :method => :delete
+        = link_to 'Löschen', school_year, data: { confirm: 'Sind Sie sicher?' }, :method => :delete
 
 = link_to 'Neues Schuljahr', new_school_year_path, class: 'btn btn-default'

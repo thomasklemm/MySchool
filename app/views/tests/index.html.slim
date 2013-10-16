@@ -22,6 +22,6 @@ h2 Klassenarbeiten
 /       td = test.teacher.try(:name)
 /       td class='actions hidden-print'
 /         = link_to 'Bearbeiten', edit_test_path(test)
-/         = link_to 'Löschen', test_path(test), :confirm => 'Sind Sie sicher?', :method => :delete
+/         = link_to 'Löschen', test_path(test), data: { confirm: 'Sind Sie sicher?' }, :method => :delete
 
 = link_to 'Neue Klassenarbeit', new_klass_test_path(@klass), class: 'btn btn-default hidden-print'

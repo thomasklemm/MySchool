@@ -14,6 +14,6 @@ table class='table table-striped'
       td = klass.students.size
       td class='actions'
         = link_to 'Bearbeiten', edit_klass_path(klass)
-        = link_to 'Löschen', klass, :confirm => 'Sind Sie sicher?', :method => :delete
+        = link_to 'Löschen', klass, data: { confirm: 'Sind Sie sicher?' }, :method => :delete
 
 = link_to 'Neue Klasse', new_klass_path, class: 'btn btn-default'

@@ -6,4 +6,4 @@ h1 Bearbeite Klassenarbeit
 ' oder
 .space-one
 
-= link_to 'Klassenarbeit löschen', test_path(@test), :confirm => 'Sind Sie sicher?', :method => :delete, class: 'btn btn-danger'
+= link_to 'Klassenarbeit löschen', test_path(@test), data: { confirm: 'Sind Sie sicher?' }, :method => :delete, class: 'btn btn-danger'

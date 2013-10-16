@@ -13,6 +13,6 @@ table class='table table-striped'
       td class='actions'
         = link_to 'Anzeigen', course
         = link_to 'Bearbeiten', edit_course_path(course)
-        = link_to 'Löschen', course, :confirm => 'Sind Sie sicher?', :method => :delete
+        = link_to 'Löschen', course, data: { confirm: 'Sind Sie sicher?' }, :method => :delete
 
 = link_to 'Neues Fach', new_klass_course_path(@klass), class: 'btn btn-default'

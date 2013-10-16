@@ -31,13 +31,13 @@
 
   .field
     = f.label :headmaster_id
-    = f.collection_select :headmaster_id, @school.teachers.by_name, :id, :name, prompt: true
+    = f.collection_select :headmaster_id, @school.teachers, :id, :name, prompt: true
   .field
     = f.label :deputy_headmaster_id
-    = f.collection_select :deputy_headmaster_id, @school.teachers.by_name, :id, :name, prompt: true
+    = f.collection_select :deputy_headmaster_id, @school.teachers, :id, :name, prompt: true
 
   .field
     = f.label :default_school_year_id
-    = f.collection_select :default_school_year_id, @school.school_years.by_date(:asc), :id, :name, prompt: true
+    = f.collection_select :default_school_year_id, @school.school_years, :id, :name, prompt: true
 
   .actions = f.submit

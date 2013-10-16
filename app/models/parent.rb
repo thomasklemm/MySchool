@@ -2,10 +2,12 @@ class Parent < ActiveRecord::Base
   belongs_to :school
   has_many :student_parents
   has_many :students, through: :student_parents
-  has_many :klasses, -> { uniq }, through: :students
+  # Reordering removes the default scope (ordering) from students
+  has_many :klasses, -> { uniq.reorder(:name) }, through: :students
   validates :school_id, :last_name, :first_name, presence: true
   localize_field :date_of_birth
   scope :by_name, -> { order(:last_name, :first_name) }
+  default_scope { by_name }
 
   def name
     "#{first_name} #{last_name}"

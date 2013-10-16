@@ -33,6 +33,6 @@ nav class='navbar navbar-default navbar-static-top'
 
       / school year dropdown options
       ul class='dropdown-menu'
-        - current_school.school_years.by_date(:desc).each do |school_year|
+        - current_school.school_years.each do |school_year|
           = content_tag :li, class: school_year.id == current_school_year.id ? 'active' : nil
             = link_to school_year.name, [:set, school_year], method: :post

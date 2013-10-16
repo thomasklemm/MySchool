@@ -4,12 +4,12 @@
 #
 BirthdaySorter = Struct.new(:students) do
   def sort_by_birthday_in_school_year(start_date)
-    result = students.sort_by { |student| [student.date_of_birth.month, student.date_of_birth.day] }
+    result = students.sort_by { |student| [student[:date_of_birth].month, student[:date_of_birth].day] }
 
     birthdays = {after: [], before: []}
 
     result.each do |student, hash|
-      dob = student.date_of_birth
+      dob = student[:date_of_birth]
       birthdays[:before] << student if dob.month < start_date.month || (dob.month == start_date.month && dob.mday < dob.mday)
       birthdays[:after] << student if dob.month > start_date.month || (dob.month == start_date.month && dob.mday >= dob.mday)
     end

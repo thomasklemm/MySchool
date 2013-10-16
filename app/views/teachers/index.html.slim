@@ -29,6 +29,6 @@ table class='table table-striped'
       td class='actions'
         = link_to 'Anzeigen', teacher
         = link_to 'Bearbeiten', edit_teacher_path(teacher)
-        = link_to 'Löschen', teacher, :confirm => 'Sind Sie sicher?', :method => :delete
+        = link_to 'Löschen', teacher, data: { confirm: 'Sind Sie sicher?' }, :method => :delete
 
 = link_to 'Neuer Lehrer', new_teacher_path, class: 'btn btn-default'

@@ -3,6 +3,8 @@ class Test < ActiveRecord::Base
   belongs_to :klass
   belongs_to :teacher
   validates :name, :date, :klass_id, :teacher_id, presence: true
+  scope :by_date, ->(direction=:asc) { order(date: direction) }
+  default_scope { by_date }
 
   def title_in_cal
     "[#{klass.name}] #{name} (#{teacher.name})".html_safe
