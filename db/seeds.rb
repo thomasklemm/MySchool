@@ -44,6 +44,9 @@ end
 
 p "SchoolYear Create: #{ school_year.name }"
 
+# Set current school year on school
+school.current_school_year = school_year and school.save!
+
 KLASS_NAMES = %w(5a 5b 6a 7a 8a 9a)
 klasses = KLASS_NAMES.each_with_object([]) do |name, ary|
   ary << school_year.klasses.create! do |k|
