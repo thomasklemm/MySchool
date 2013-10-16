@@ -1,5 +1,5 @@
 class Parent < ActiveRecord::Base
-  belongs_to :school
+  belongs_to :school, inverse_of: :parents
   has_many :student_parents
   has_many :students, through: :student_parents
   # Reordering removes the default scope (ordering) from students

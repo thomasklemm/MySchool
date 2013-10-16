@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  belongs_to :school
+  belongs_to :school, inverse_of: :students
   has_many :student_parents
   has_many :parents, through: :student_parents
   has_many :student_klasses, class_name: 'KlassStudent'

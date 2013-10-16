@@ -1,6 +1,6 @@
 class Course < ActiveRecord::Base
-  belongs_to :school_year
-  belongs_to :teacher
+  belongs_to :school_year, inverse_of: :courses
+  belongs_to :teacher, inverse_of: :courses
   has_many :course_klasses
   has_many :klasses, through: :course_klasses
   has_many :course_students
