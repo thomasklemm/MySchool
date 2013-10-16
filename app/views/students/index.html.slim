@@ -10,7 +10,7 @@ table class='table table-striped'
     th = Student.human_attribute_name(:gender)
     th = Student.human_attribute_name(:date_of_birth)
     th = Student.human_attribute_name(:email)
-    th = Student.human_attribute_name(:current_klass)
+    th = Student.human_attribute_name(:klass_name)
     th
 
   - @students.each do |student|
@@ -23,7 +23,7 @@ table class='table table-striped'
       td = student.gender
       td = student.date_of_birth
       td = student.email
-      td = student.current_klass.try(:name)
+      td = student.klass_name_in(current_school_year)
       td class='actions'
         = link_to 'Anzeigen', student
         = link_to 'Bearbeiten', edit_student_path(student)

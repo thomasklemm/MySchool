@@ -1,6 +1,4 @@
-h1
-  ' Schuljahre
-  small = current_school.name
+h1 Schuljahre
 
 table class='table table-striped'
   tr
@@ -11,11 +9,13 @@ table class='table table-striped'
 
   - @school_years.each do |school_year|
     tr
-      td = school_year.name
-      td = I18n.l school_year.start_date
-      td = I18n.l school_year.end_date
+      td
+        = link_to school_year do
+          => school_year.name
+        = '(Aktuelles Schuljahr)' if current_school.current_school_year_id == school_year.id
+      td = school_year.start_date
+      td = school_year.end_date
       td class='actions'
-        = link_to 'Anzeigen', school_year
         = link_to 'Bearbeiten', edit_school_year_path(school_year)
         = link_to 'Löschen', school_year, :confirm => 'Sind Sie sicher?', :method => :delete
 

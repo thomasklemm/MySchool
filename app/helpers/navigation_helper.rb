@@ -1,6 +1,6 @@
 module NavigationHelper
   def active_list_item(url_parts, exact=false)
-    content_tag :li, class: ('active' if active_path?(url_parts)) do
+    content_tag :li, class: ('active' if active_path?(url_parts, exact)) do
       yield
     end
   end

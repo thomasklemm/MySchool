@@ -1,0 +1,16 @@
+h1
+  => @school.name
+  small = link_to 'Bearbeiten', edit_school_path
+
+table class='table table-striped table-bordered'
+  tbody
+    - %w(name street postal_code city country phone fax email web_page).each do |field|
+      tr
+        td: b = School.human_attribute_name(field)
+        td = @school.send(field)
+
+    - %w(headmaster deputy_headmaster current_school_year).each do |field|
+      tr
+        td: b = School.human_attribute_name(field)
+        td = @school.send(field).try(:name)
+

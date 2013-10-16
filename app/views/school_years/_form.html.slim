@@ -4,13 +4,12 @@
   .field
     = f.label :name
     = f.text_field :name, autofocus: @school_year.new_record?
-  .field
-    = f.label :start_date
-    br
-    = f.date_select :start_date, include_blank: true
-  .field
-    = f.label :end_date
-    br
-    = f.date_select :end_date, include_blank: true
+
+  - %w(start_date end_date).each do |field|
+    .field
+      = f.label field
+      .input-group
+        span class='input-group-addon' = icon_tag(:calendar)
+        = f.text_field field, class: 'date', value: @school_year.send(field)
 
   .actions = f.submit

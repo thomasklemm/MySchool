@@ -3,6 +3,6 @@
 
   .field
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name, autofocus: @klass.new_record?
 
   .actions = f.submit

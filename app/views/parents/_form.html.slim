@@ -3,7 +3,7 @@
 
   .field
     = f.label :last_name
-    = f.text_field :last_name
+    = f.text_field :last_name, autofocus: @parent.new_record?
   .field
     = f.label :first_name
     = f.text_field :first_name
@@ -15,8 +15,9 @@
     = f.text_field :gender
   .field
     = f.label :date_of_birth
-    br
-    = f.date_select :date_of_birth, include_blank: true
+    .input-group
+      span class='input-group-addon' = icon_tag(:calendar)
+      = f.text_field :date_of_birth, class: 'date', value: @parent.date_of_birth
   .field
     = f.label :email
     = f.text_field :email

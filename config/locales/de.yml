@@ -217,19 +217,24 @@ de:
         school_year: Schuljahr
         students_count: Klassengröße
       school:
-        created_at: 'Erstellt am'
+        city: Stadt
         country: Land
+        created_at: 'Erstellt am'
+        current_school_year: 'Aktuelles Schuljahr'
+        current_school_year_id: 'Aktuelles Schuljahr'
+        deputy_headmaster: 'Stellvertretender Schulleiter'
+        deputy_headmaster_id: 'Stellvertretender Schulleiter'
         email: Email
         fax: Fax
+        headmaster: Schulleiter
+        headmaster_id: Schulleiter
         name: Name
         phone: Telefon
+        postal_code: PLZ
         street: Straße
-        city: Stadt
         updated_at: 'Geändert am'
         web_page: Internetseite
-        postal_code: PLZ
       student:
-        current_klass: Klasse
         last_name: Nachname
         first_name: Vorname
         name: Name
@@ -238,6 +243,8 @@ de:
         date_of_birth: Geburtsdatum
         birthday: Geburtstag
         email: Email
+        klass: Klasse
+        klass_name: Klasse
       teacher:
         last_name: Nachname
         first_name: Vorname
@@ -246,6 +253,8 @@ de:
         date_of_birth: Geburtsdatum
         email: Email
         shorthand_symbol: Kürzel
+        klasses: Klassen
+        klass_names: Klassen
       school_year:
         name: Bezeichnung
         start_date: Beginn
@@ -257,6 +266,8 @@ de:
         gender: Geschlecht
         date_of_birth: Geburtsdatum
         email: Email
+        klasses: Klassen
+        klass_names: Klassen
       course:
         name: Bezeichnung
         teacher: Lehrer

@@ -15,8 +15,9 @@
     = f.text_field :gender
   .field
     = f.label :date_of_birth
-    br
-    = f.date_select :date_of_birth, include_blank: true
+    .input-group
+      span class='input-group-addon' = icon_tag(:calendar)
+      = f.text_field :date_of_birth, class: 'date', value: @student.date_of_birth
   .field
     = f.label :email
     = f.text_field :email

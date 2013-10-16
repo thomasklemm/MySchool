@@ -3,7 +3,7 @@ class SchoolYearsController < ApplicationController
 
   # GET /school_years
   def index
-    @school_years = current_school.school_years.all
+    @school_years = current_school.school_years.by_date
   end
 
   # GET /school_years/1

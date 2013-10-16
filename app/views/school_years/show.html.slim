@@ -1,18 +1,15 @@
-p#notice = notice
+/ show school
+- @school_year = @school_year.decorate
 
-p
-  strong School:
-  = @school_year.school
-p
-  strong Name:
-  = @school_year.name
-p
-  strong Starts on:
-  = @school_year.start_date
-p
-  strong Ends on:
-  = @school_year.end_date
+h1
+  ' Schuljahr
+  small = link_to 'Bearbeiten', edit_school_year_path(@school_year)
 
-= link_to 'Edit', edit_school_year_path(@school_year)
-'|
-= link_to 'Back', school_years_path
+table class='table table-striped table-bordered'
+  tbody
+    - %w(name start_date end_date).each do |field|
+      tr
+        td: b = SchoolYear.human_attribute_name(field)
+        td = @school_year.send(field)
+
+= link_to 'Zurück', school_years_path

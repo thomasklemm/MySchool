@@ -1,15 +1,9 @@
 class StudentDecorator < Draper::Decorator
   delegate_all
 
-  def date_of_birth
-    dob = model.date_of_birth
-    dob.present? ? I18n.l(dob) : nil
-  end
-
   # Returns 03.08.
   def birthday
-    return unless model.date_of_birth.present?
-    I18n.l(model.date_of_birth).first(6)
+    date_of_birth.try(:first, 6)
   end
 
   def birthday_today?
@@ -27,7 +21,7 @@ class StudentDecorator < Draper::Decorator
   private
 
   def birthday_calculator
-    Birthday.new(model.date_of_birth, h.current_school_year.start_date, h.current_school_year.end_date)
+    Birthday.new(model[:date_of_birth], h.current_school_year[:start_date], h.current_school_year[:end_date])
   end
 
   # Define presentation-specific methods here. Helpers are accessed through

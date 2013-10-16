@@ -1,9 +1,8 @@
 class TeacherDecorator < Draper::Decorator
   delegate_all
 
-  def date_of_birth
-    dob = model.date_of_birth
-    dob.present? ? I18n.l(dob) : nil
+  def klass_names_in(school_year)
+    klasses_in(school_year).map(&:name).sort.join(', ')
   end
 
   # Define presentation-specific methods here. Helpers are accessed through

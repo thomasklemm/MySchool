@@ -8,4 +8,5 @@ class Klass < ActiveRecord::Base
   has_many :teachers, -> { uniq }, through: :courses
   has_many :tests
   validates :school_year_id, :name, presence: true
+  scope :by_name, -> { order(:name) }
 end

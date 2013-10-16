@@ -18,3 +18,6 @@ nav class='navbar navbar-default navbar-static-top'
     = active_list_item :school_years do
       = link_to 'Schuljahre', school_years_path
 
+    = active_list_item :school, true do
+      = link_to 'Schule', school_path
+

@@ -1,8 +1,10 @@
 MySchool::Application.routes.draw do
+  resource :school, only: [:show, :edit, :update]
+  resources :school_years
+
   resources :teachers
   resources :students
   resources :parents
-  resources :school_years
 
   resources :klasses, shallow: true do
     resources :students, controller: 'klass_students', only: :index

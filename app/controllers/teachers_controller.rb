@@ -3,7 +3,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers
   def index
-    @teachers = current_school.teachers.all
+    @teachers = current_school.teachers.by_name
   end
 
   # GET /teachers/1

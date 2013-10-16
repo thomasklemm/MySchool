@@ -4,7 +4,7 @@ class KlassesController < ApplicationController
 
   # GET /klasses
   def index
-    @klasses = current_school_year.klasses.all
+    @klasses = current_school_year.klasses.by_name
   end
 
   # GET /klasses/1

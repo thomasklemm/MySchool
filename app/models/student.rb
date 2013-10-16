@@ -8,16 +8,18 @@ class Student < ActiveRecord::Base
   has_many :courses, through: :student_courses
   validates :school_id, :first_name, :last_name, presence: true
   validates :email, email: { allow_blank: true }
+  localize_field :date_of_birth
+  scope :by_name, -> { order(:last_name, :first_name) }
 
   def name
     "#{first_name} #{last_name}"
   end
 
-  def name_and_current_klass
-    "#{name} (#{current_klass.name})"
+  def klass_in(school_year)
+    @klass_in_school_year ||= klasses.find_by(school_year_id: school_year.id)
   end
 
-  def current_klass
-    klasses.first
+  def klass_name_in(school_year)
+    klass_in(school_year).try(:name)
   end
 end

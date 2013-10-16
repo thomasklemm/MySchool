@@ -11,6 +11,7 @@ table class='table table-striped'
     th = Teacher.human_attribute_name(:date_of_birth)
     th = Teacher.human_attribute_name(:email)
     th = Teacher.human_attribute_name(:shorthand_symbol)
+    th = Teacher.human_attribute_name(:klass_names)
     th
 
   - @teachers.each do |teacher|
@@ -24,6 +25,7 @@ table class='table table-striped'
       td = teacher.date_of_birth
       td = teacher.email
       td = teacher.shorthand_symbol
+      td = teacher.klass_names_in(current_school_year)
       td class='actions'
         = link_to 'Anzeigen', teacher
         = link_to 'Bearbeiten', edit_teacher_path(teacher)

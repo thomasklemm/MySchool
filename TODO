@@ -2,3 +2,7 @@
   - Lehrer? Stundenplan? Schüler? Klassleiter?
     - A few things
 
+- abstract decorator methods
+  :localize_dates :start_date, :end_date
+   (see priceable gem)
+   (or even apply that in model)

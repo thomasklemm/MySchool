@@ -8,6 +8,7 @@ table class='table table-striped'
     th = Parent.human_attribute_name(:gender)
     th = Parent.human_attribute_name(:date_of_birth)
     th = Parent.human_attribute_name(:email)
+    th = Parent.human_attribute_name(:klass_names)
     th
 
   - @parents.each do |parent|
@@ -20,6 +21,7 @@ table class='table table-striped'
       td = parent.gender
       td = parent.date_of_birth
       td = parent.email
+      td = parent.klass_names_in(current_school_year)
       td class='actions'
         = link_to 'Anzeigen', parent
         = link_to 'Bearbeiten', edit_parent_path(parent)
