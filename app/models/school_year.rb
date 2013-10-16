@@ -5,7 +5,7 @@ class SchoolYear < ActiveRecord::Base
   has_many :courses
   validates :school_id, :name, :start_date, :end_date, presence: true
 
-  scope :by_date, -> { order(:start_date) }
+  scope :by_date, ->(direction=:asc) { order(start_date: direction) }
 
   localize_fields :start_date, :end_date
 

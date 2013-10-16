@@ -1,9 +1,9 @@
 class SchoolYearsController < ApplicationController
-  before_action :set_school_year, only: [:show, :edit, :update, :destroy]
+  before_action :set_school_year, only: [:show, :edit, :update, :destroy, :set]
 
   # GET /school_years
   def index
-    @school_years = current_school.school_years.by_date
+    @school_years = current_school.school_years.by_date(:desc)
   end
 
   # GET /school_years/1
@@ -43,6 +43,22 @@ class SchoolYearsController < ApplicationController
   def destroy
     @school_year.destroy
     redirect_to school_years_url, notice: 'Schuljahr wurde erfolgreich gelöscht.'
+  end
+
+  # POST /school_years/1/set
+  # Set current school year
+  def set
+    if @school_year.id == current_school.current_school_year_id
+      # default school year is set
+      session.delete(:current_school_year_id)
+    else
+      # store school year id in session
+      session[:current_school_year_id] = @school_year.id
+    end
+
+    redirect_to :back
+    rescue ActionController::RedirectBackError
+    redirect_to root_path
   end
 
   private

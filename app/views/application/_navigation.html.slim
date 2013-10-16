@@ -2,7 +2,7 @@
 nav class='navbar navbar-default navbar-static-top'
   = link_to 'Meine Schule', root_path, class: 'navbar-brand'
 
-  ul class='nav navbar-nav'
+  ul class='nav navbar-nav navbar-left'
     = active_list_item :klasses do
       = link_to 'Klassen', klasses_path
 
@@ -21,3 +21,18 @@ nav class='navbar navbar-default navbar-static-top'
     = active_list_item :school, true do
       = link_to 'Schule', school_path
 
+
+  ul class='nav navbar-nav navbar-right'
+    / school year dropdown
+    li class='dropdown'
+
+      / current school year
+      = link_to 'javascript:;', class: 'dropdown-toggle', data: { toggle: 'dropdown' } do
+        => current_school_year.name
+        b class='caret'
+
+      / school year dropdown options
+      ul class='dropdown-menu'
+        - current_school.school_years.by_date(:desc).each do |school_year|
+          = content_tag :li, class: school_year.id == current_school_year.id ? 'active' : nil
+            = link_to school_year.name, [:set, school_year], method: :post

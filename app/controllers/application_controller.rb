@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_school, :current_school_year
 
+  before_action :ensure_current_school
+  before_action :ensure_current_school_year
+
   private
 
   def current_school
@@ -11,9 +14,21 @@ class ApplicationController < ActionController::Base
   end
 
   def current_school_year
-    @current_school_year ||= begin
-      current_school.current_school_year.presence || current_school.school_years.first!
-    end
+    @current_school_year ||= current_school_year!
+  end
+
+  def current_school_year!
+    current_school.school_years.find_by(id: session[:current_school_year_id]).presence ||
+    current_school.current_school_year.presence ||
+    current_school.school_years.first
+  end
+
+  def ensure_current_school
+    raise "Expected a school to be set for this request." unless current_school
+  end
+
+  def ensure_current_school_year
+    raise "Expected a school year to be set for this request." unless current_school_year
   end
 
   def set_klass

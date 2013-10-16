@@ -1,6 +1,8 @@
 MySchool::Application.routes.draw do
   resource :school, only: [:show, :edit, :update]
-  resources :school_years
+  resources :school_years do
+    post :set, on: :member
+  end
 
   resources :teachers
   resources :students
