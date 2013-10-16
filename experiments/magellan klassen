@@ -1,0 +1,109 @@
+# Magellan: Mandant / Schule
+  name1
+  name2
+  name3
+  kuerzel
+  schulnummer
+  aussenstelle
+  strasse
+  postleitzahl
+  ort
+  land
+  gemeindekennzahl (aus schluesselverzeichnis)
+  telefon
+  telefax
+  email
+  internet
+  kategorie
+  betreuungsform
+  schultraeger
+  schulstatus
+  hauptstelle
+  schulleiter
+  stellvertreter
+
+magellan klasse
+  langname 1 # 'Klasse 8a'
+  langname 2
+  kuerzel # 8a
+  klassenleiter 1
+  klassenleiter 2
+  klassenraum
+  klassenstufe # 7
+  fachtafel # fachtafel jg. 7 => eingabe zeugnisdaten
+  unterrichtsform
+  jahrgang # 7
+  unterrichtstage # mo,di,mi,do,fr,sa,so
+  elternsprecher 1
+  elternsprecher 2
+  schuelersprecher 1
+  schuelersprecher 2
+  wahlvertreter 1
+  wahlvertreter 2
+
+magellan lehrer
+  vorname
+  nachname
+  anrede
+  geschlecht
+  geboren am
+  geburtsname
+  geburtsort
+  kürzel
+  personalnummer (extern)
+  strasse
+  postleitzahl
+  ort
+  land
+  gemeindeschluessel
+  telefon
+  mobil
+  telefax
+  diensttelefon
+  dienstfax
+  email
+  familienstand
+  kinder(zahl)
+  beruf
+  kfz 1 (kennzeichen)
+  kfz 2 (kennzeichen)
+  kategorie
+  staatsangehoerigkeit
+  konfession
+  status aktiv/inaktiv
+
+  hat lehraemter
+  hat fehlzeiten
+
+magellan schueler
+  nachname
+  vorname
+  anrede
+  geschlecht
+  geboren am
+  geburtsname
+  geburtsort
+  geburtsland
+  strasse
+  plz
+  ort
+  land
+  ortsteil
+  gemeinde
+  wohnform
+  telefon
+  telefax
+  mobil
+  email
+
+  klasse
+  klassenleiter
+  ausbildung
+  einschulmerkmal
+
+  konfession
+  religionswunsch
+  religionsteilnahme
+  relgrund
+  relabmeldung von xxx bis xxx
+

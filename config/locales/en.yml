@@ -221,10 +221,10 @@ en:
         name: Name
         phone: Phone
         street: Street
-        town: Town
+        city: Town
         updated_at: 'Updated at'
         web_page: 'Web page'
-        zip_code: 'ZIP code'
+        postal_code: 'ZIP code'
       student:
         last_name: 'Last name'
         first_name: 'First name'

@@ -224,10 +224,10 @@ de:
         name: Name
         phone: Telefon
         street: Straße
-        town: Stadt
+        city: Stadt
         updated_at: 'Geändert am'
         web_page: Internetseite
-        zip_code: PLZ
+        postal_code: PLZ
       student:
         current_klass: Klasse
         last_name: Nachname

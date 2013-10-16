@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_school_year
-    @current_school_year ||= current_school.school_years.first
+    @current_school_year ||= begin
+      current_school.current_school_year.presence || current_school.school_years.first!
+    end
   end
 
   def set_klass

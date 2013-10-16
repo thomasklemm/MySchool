@@ -1,8 +1,8 @@
 Fabricator(:school) do
   name     "MyText"
   street   "MyText"
-  zip_code "MyText"
-  town     "MyText"
+  postal_code "MyText"
+  city     "MyText"
   country  "MyText"
   phone    "MyText"
   fax      "MyText"
