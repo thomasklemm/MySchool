@@ -45,7 +45,7 @@ end
 p "SchoolYear Create: #{ school_year.name }"
 
 # Set current school year on school
-school.current_school_year = school_year and school.save!
+school.default_school_year = school_year and school.save!
 
 school.school_years.create! do |y|
   y.name       = 'Schuljahr 2012/2013'

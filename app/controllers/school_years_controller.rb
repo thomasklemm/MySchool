@@ -48,7 +48,7 @@ class SchoolYearsController < ApplicationController
   # POST /school_years/1/set
   # Set current school year
   def set
-    if @school_year.id == current_school.current_school_year_id
+    if @school_year.id == current_school.default_school_year_id
       # default school year is set
       session.delete(:current_school_year_id)
     else

@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def current_school_year!
     current_school.school_years.find_by(id: session[:current_school_year_id]).presence ||
-    current_school.current_school_year.presence ||
+    current_school.default_school_year.presence ||
     current_school.school_years.first
   end
 

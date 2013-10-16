@@ -1,5 +1,7 @@
 h1 Schuljahre
 
+p In den #{ link_to 'Schuleinstellungen', school_path } können Sie das "Voreingestellte Schuljahr" ändern.
+
 table class='table table-striped'
   tr
     th = SchoolYear.human_attribute_name(:name)
@@ -12,7 +14,7 @@ table class='table table-striped'
       td
         = link_to school_year do
           => school_year.name
-        = '(Aktuelles Schuljahr)' if current_school.current_school_year_id == school_year.id
+        = '(' + School.human_attribute_name(:default_school_year) + ')' if school_year.id == current_school.default_school_year_id
       td = school_year.start_date
       td = school_year.end_date
       td class='actions'

@@ -9,7 +9,7 @@ table class='table table-striped table-bordered'
         td: b = School.human_attribute_name(field)
         td = @school.send(field)
 
-    - %w(headmaster deputy_headmaster current_school_year).each do |field|
+    - %w(headmaster deputy_headmaster default_school_year).each do |field|
       tr
         td: b = School.human_attribute_name(field)
         td = @school.send(field).try(:name)

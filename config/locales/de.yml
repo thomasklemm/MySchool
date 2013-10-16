@@ -220,8 +220,8 @@ de:
         city: Stadt
         country: Land
         created_at: 'Erstellt am'
-        current_school_year: 'Aktuelles Schuljahr'
-        current_school_year_id: 'Aktuelles Schuljahr'
+        default_school_year: 'Vorausgewähltes Schuljahr'
+        default_school_year_id: 'Vorausgewähltes Schuljahr'
         deputy_headmaster: 'Stellvertretender Schulleiter'
         deputy_headmaster_id: 'Stellvertretender Schulleiter'
         email: Email
